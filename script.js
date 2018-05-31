@@ -4,25 +4,23 @@
 // be 1. If the user gives the numbers 3 and 2, the result should still
 // be 1.
 //
-// Hint: To get the user input and store it in a variable, we can do 
+// Hint: To get the user input and store it in a variable, we can do
 // `var someVar = prompt("Give me a high five");`. Consider asking for 1
 // number at a time first.
 // ====================================================================
 // Write your solution below.
 // ====================================================================
 
+// var firstNumber = parseInt(prompt("Enter a number"));
+// var secondNumber = parseInt(prompt("Enter another number"));
 
+// function differenceInTwoNumbers(firstNumber, secondNumber) {
+//     return Math.abs(firstNumber - secondNumber);
+// }
 
+// var difference = differenceInTwoNumbers(firstNumber, secondNumber)
 
-
-
-
-
-
-
-
-
-
+// console.log(difference);
 
 // ========================== Exercise 2 ==============================
 // Prompt the user for a number, then console.log its ordinal version.
@@ -37,21 +35,24 @@
 // Write your solution below
 // ====================================================================
 
+// var userInput = prompt("Enter a number");
 
+// function ordinalSuffix(userInput) {
+//     var modulus1 = userInput % 10,
+//         modulus2 = userInput % 100;
+//     if (modulus1 == 1 && modulus2 != 11) {
+//         return userInput + "st";
+//     }
+//     if (modulus1 == 2 && modulus2 != 12) {
+//         return userInput + "nd";
+//     }
+//     if (modulus1 == 3 && modulus2 != 11) {
+//         return userInput + "rd";
+//     }
+//     return userInput + "th";
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(ordinalSuffix(userInput));
 
 // ========================== Exercise 3 =================================
 // Generate a random integer (hint: search Google or MDN) between 1 to 10.
@@ -62,19 +63,15 @@
 // =======================================================================
 
 
+// var randomNumber = Math.floor(Math.random()*11)
 
+// var enteredNumber = prompt("Enter a whole number between 1 to 10");
 
-
-
-
-
-
-
-
-
-
-
-
+// if (randomNumber == enteredNumber) {
+//     console.log("Your number " + enteredNumber + " matched the random number" + randomNumber);
+// } else {
+//     console.log("Your number did not match with the random number of " + randomNumber);
+// }
 
 // ========================== Exercise 4 ===============================
 // Generate a random string of length 6 alphanumeric characters.
@@ -89,23 +86,17 @@
 // Write your solution below.
 // =====================================================================
 
+// function randomStringGenerator() {
+//   var string = "";
+//   var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+//   for (var i = 0; i < 6; i++)
+//     string += characters.charAt(Math.floor(Math.random() * characters.length));
 
+//   return string;
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(randomStringGenerator());
 
 // ========================== Exercise 5 ==============================
 // Shuffle the elements of the given array below.
@@ -115,33 +106,35 @@
 // Write your solution below.
 // ====================================================================
 
-var testArray = [1, 2, 4, 8, 16, 32, 64, 128];
+// function shuffle(array) {
+//   var currentIndex = array.length, temporaryValue, randomIndex;
 
+//   // While there remain elements to shuffle...
+//   while (0 !== currentIndex) {
 
+//     // Pick a remaining element...
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
 
+//     // And swap it with the current element.
+//     temporaryValue = array[currentIndex];
+//     array[currentIndex] = array[randomIndex];
+//     array[randomIndex] = temporaryValue;
+//   }
 
+//   return array;
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var testArray = [1, 2, 4, 8, 16, 32, 64, 128];
+// testArray = shuffle(testArray);
+// console.log(testArray);
 
 // ========================== Exercise 6 ==============================
 // Examine the phonebook below.
-// 
+//
 // 1. Prompt the user for a name, and show
-// (in any way, e.g. console.log) the phone number corresponding to 
-// the given name. 
+// (in any way, e.g. console.log) the phone number corresponding to
+// the given name.
 //
 // 2. Prompt the user for a name and a number. Update the number
 // corresponding to the name if the name exists in the phonebook.
@@ -154,48 +147,136 @@ var testArray = [1, 2, 4, 8, 16, 32, 64, 128];
 //
 // Bonus: Prompt the user for a number. If the number exists in the
 // phonebook, show the name corresponding to it.
-// Hint: The phonebook is a JS Object. Search Google / MDN for 
+// Hint: The phonebook is a JS Object. Search Google / MDN for
 // 'Javascript Object methods' to see if there might be something useful.
 // ====================================================================
-// Write your solution below.
+// Write your solution 1 below.
 // ====================================================================
 
-var Phonebook = {
-    "Jason"         :   91216599,
-    "Amelie"        :   64239839,
-    "Sing An"       :   85404834,
-    "Ong Tng Kai"   :   94547788,
-    "Nelson Tan"    :   63396565
-};
+// 1. Prompt the user for a name, and show
+// (in any way, e.g. console.log) the phone number corresponding to
+// the given name.
 
+// var Phonebook = {
+//     "Jason"         :   91216599,
+//     "Amelie"        :   64239839,
+//     "Sing An"       :   85404834,
+//     "Ong Tng Kai"   :   94547788,
+//     "Nelson Tan"    :   63396565
+// };
 
+// var inputName = prompt("Enter a name");
 
+// var phonebookName = Object.keys(Phonebook);
 
+// // console.log(phonebookName); // ["Jason", "Amelie", "Sing An", "Ong Tng Kai", "Nelson Tan"]
 
+// for (var i = 0; i < phonebookName.length; i++) {
+//   if (inputName == phonebookName[i]) {
+//     console.log("The phone number for " + phonebookName[i] + " is: " + Phonebook[inputName])
+//   }
+// }
 
+// ====================================================================
+// Write your solution 2 below.
+// ====================================================================
 
+// 2. Prompt the user for a name and a number. Update the number
+// corresponding to the name if the name exists in the phonebook.
 
+// var Phonebook = {
+//     "Jason"         :   91216599,
+//     "Amelie"        :   64239839,
+//     "Sing An"       :   85404834,
+//     "Ong Tng Kai"   :   94547788,
+//     "Nelson Tan"    :   63396565
+// };
 
+// var updatePhonebookName = prompt("Enter a name");
 
+// var updatePhonebookNumber = parseInt(prompt("Enter a number"));
 
+// var phonebookKeys = Object.keys(Phonebook);
 
+// // var eachKey = phonebookKeys.forEach();
 
+// for (var i = 0; i < phonebookKeys.length; i++) {
+//   if (updatePhonebookName == phonebookKeys[i]) {
+//     Phonebook[updatePhonebookName] = updatePhonebookNumber;
+//     console.log("The number has been updated!");
+//   }
+// }
 
+// console.log(Phonebook);
 
+// ====================================================================
+// Write your solution 3 below.
+// ====================================================================
 
+// 3. Prompt the user for a name and a number. If the name and number
+// do not already exist in the phonebook, insert it into the phonebook.
 
+// var Phonebook = {
+//     "Jason"         :   91216599,
+//     "Amelie"        :   64239839,
+//     "Sing An"       :   85404834,
+//     "Ong Tng Kai"   :   94547788,
+//     "Nelson Tan"    :   63396565
+// };
 
+// var addPhonebookName = prompt("Enter a name");
 
+// var addPhonebookNumber = parseInt(prompt("Enter a number"));
 
+// var phonebookKeys = Object.keys(Phonebook);
 
+// // var eachKey = phonebookKeys.forEach();
 
+// for (var i = 0; i < phonebookKeys.length; i++) {
+//   if (addPhonebookName !== phonebookKeys[i]) {
+//     Phonebook[addPhonebookName] = addPhonebookNumber;
+//     console.log("The number has been added!");
+//   }
+// }
+
+// console.log(Phonebook);
+
+// ====================================================================
+// Write your solution 4 below.
+// ====================================================================
+
+// 4. Prompt the user for a name. If the name exists in the phonebook,
+// erase its record.
+
+// var Phonebook = {
+//     "Jason"         :   91216599,
+//     "Amelie"        :   64239839,
+//     "Sing An"       :   85404834,
+//     "Ong Tng Kai"   :   94547788,
+//     "Nelson Tan"    :   63396565
+// };
+
+// var deletePhonebookName = prompt("Enter a name");
+
+// var phonebookKeys = Object.keys(Phonebook);
+
+// // var eachKey = phonebookKeys.forEach();
+
+// for (var i = 0; i < phonebookKeys.length; i++) {
+//   if (deletePhonebookName == phonebookKeys[i]) {
+//     delete Phonebook[deletePhonebookName];
+//     console.log(deletePhonebookName + "'s number has been deleted!");
+//   }
+// }
+
+// console.log(Phonebook);
 
 // ====================== Bonus Exercise 7 =============================
 // JS Array / Object Handling - References vs Values
 // =====================================================================
 // A common class of bugs that programmers face occurs when they change
 // an object that they didn't mean to.
-// 
+//
 // Examine the array below.
 // Prompt the user for 2 integers. Swap the elements in the 2 positions
 // of the array corresponding to the user input, and display the result.
